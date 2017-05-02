@@ -64,8 +64,8 @@ class FSM {
 	 */
 	getStates(event) {
 		var allStates = Object.keys(this.states),
-			possibleStates,
-			that = this;
+		    possibleStates,
+	            that = this;
 		
 		if (!event) {
 			possibleStates = allStates;
@@ -85,7 +85,7 @@ class FSM {
 	 */
 	undo() {
 		var result = false,
-			state;
+		    state;
 		
 		if (this.prevStates.length) {
 			this.nextStates.push(this.activeStateName);
@@ -104,7 +104,7 @@ class FSM {
 	 */
 	redo() {
 		var result = false,
-			state;
+		    state;
 		if (this.nextStates.length) {
 			state = this.nextStates.pop();
 			this.activeStateName = state;
@@ -119,9 +119,9 @@ class FSM {
 	 * Clears transition history
 	 */
 	clearHistory() {
-        this.prevStates = [];
-        this.nextStates = [];
-    }
+               this.prevStates = [];
+               this.nextStates = [];
+   	}
 }
 
 module.exports = FSM;
